@@ -1,6 +1,232 @@
 body {
-    /* Set line height to 1.5 times the font size
+      /* Set line height to 1.5 times the font size
          and use the OS’s UI font as the website font
-       */
-    font: 100%/1.5 system-ui;
+      */
+       max-width: 150ch; 
+       margin-inline: auto; 
+       padding: 1rem; 
+       font-family: "Gill Sans", sans-serif; 
+       line-height: 1.6; 
+       background-color:hsla(9, 100%, 64%, 0.5); 
+       color: #333; /
   }
+
+  .name-container {
+    display: flex; 
+    align-items: center; 
+    gap: 1em;
+  }
+  
+
+  .pronunciation {
+    color: grey; 
+    font-size: 1em; 
+    font-style: "Gill Sans", sans-serif; 
+    margin: 0; 
+  }
+
+img {
+    max-width: 50%; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
+}
+
+:root {
+  --color-accent: #ff6347; 
+  --border-color: oklch(80% 3% 200); 
+}
+
+nav {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1em; 
+  padding: 0.5em 0; 
+}
+
+
+nav a {
+  flex: 1; 
+  text-align: center; 
+  text-decoration: none;
+  color: inherit; 
+  padding: 0.5em; 
+  transition: all 0.3s ease; 
+}
+
+
+nav a:hover {
+  border-bottom: 0.4em solid var(--color-accent); 
+  background-color: rgba(255, 99, 71, 0.1); 
+  padding-bottom: 0.1em;
+}
+
+
+nav a.current {
+  border-bottom: 0.4em solid var(--color-accent); 
+  padding-bottom: 0.1em;
+  font-weight: bold; 
+  background-color: rgba(255, 99, 71, 0.1); 
+}
+
+
+
+
+
+form {
+  display: grid; 
+  grid-template-columns: 1fr 2fr; 
+  gap: 1em; 
+  max-width: 600px; 
+  margin: 0 auto; 
+}
+
+
+form label {
+  display: grid; 
+  grid-template-columns: subgrid; 
+  grid-column: 1 / -1; 
+  align-items: center; 
+  gap: 0.5em; 
+}
+
+form label span {
+  grid-column: 1; 
+}
+
+form input,
+form textarea {
+  grid-column: 2; 
+  width: 100%; 
+  padding: 0.5em; 
+  box-sizing: border-box; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+}
+
+form button {
+  grid-column: 1 / -1; 
+  padding: 0.75em;
+  background-color: var(--color-accent); 
+  color: white; 
+  font-weight: bold; 
+  border: none; 
+  border-radius: 4px; 
+  cursor: pointer; 
+}
+
+form button:hover {
+  background-color: darken(var(--color-accent), 10%);
+}
+
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); 
+  gap: 1em; 
+  padding: 1em; 
+}
+
+
+.projects article {
+  display: grid; 
+  grid-template-rows: subgrid;
+  grid-row: span 3; 
+  gap: 0.5em;
+  background-color: #f9f9f9; 
+  border: 1px solid #ddd;
+  border-radius: 8px; 
+  padding: 1em; 
+}
+
+.projects img {
+  max-width: 100%; 
+  height: auto; 
+  align-self: start; 
+  margin-bottom: 0.5em; 
+}
+
+.projects h2 {
+  margin: 0; 
+  font-size: 1.2em; 
+  text-align: center; 
+}
+
+.projects p {
+  margin: 0;
+  font-size: 1em; 
+  color: #555; 
+  text-align: justify; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1; 
+  text-wrap: balance; 
+  margin: 0; 
+}
+h1 {
+  font-size: 300%; 
+}
+h2 {
+  font-size: 200%; 
+}
+h3 {
+  font-size: 150%; 
+}
+h4, h5, h6 {
+  font-size: 100%;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: rgb(255, 255, 255); 
+  padding: 2rem;
+  border: 1px solid #ddd; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+
+main section {
+  margin-bottom: 2rem; 
+}
+
+main section header h2 {
+  font-size: 1.8rem;
+  color: #9e0067; 
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+
+
+main p, main ul {
+  font-size: 1rem; 
+  color: #555; 
+  margin-bottom: 1rem; 
+}
+
+main ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+main ul li {
+  margin-bottom: 0.5rem; 
+}
+
+main article header h3 {
+  font-size: 1.5rem; 
+  color: #9e0067; 
+  margin-bottom: 0.5rem; 
+}
+
+
+footer {
+  text-align: center;
+  margin-top: 2rem; 
+  font-size: 0.9rem; 
+  color: #777; 
+}
+
