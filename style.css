@@ -1,3 +1,8 @@
+html {
+  color-scheme: light dark;
+}
+
+
 body {
       /* Set line height to 1.5 times the font size
          and use the OS’s UI font as the website font
@@ -38,6 +43,7 @@ img {
 }
 
 nav {
+  --border-color: oklch(50% 10% 200 / 40%);
   display: flex;
   border-bottom: 1px solid var(--border-color);
   margin-bottom: 1em; 
@@ -68,8 +74,6 @@ nav a.current {
   font-weight: bold; 
   background-color: rgba(255, 99, 71, 0.1); 
 }
-
-
 
 
 
@@ -229,4 +233,3 @@ footer {
   font-size: 0.9rem; 
   color: #777; 
 }
-

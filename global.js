@@ -4,7 +4,6 @@ function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 }
 
-const ARE_WE_HOME = document.documentElement.classList.contains('home');
 
 let pages = [
   { url: '', title: 'Home' },
@@ -17,26 +16,24 @@ let pages = [
 let nav = document.createElement('nav');
 document.body.prepend(nav);
 
+const ARE_WE_HOME = document.documentElement.classList.contains('home');
+
 for (let p of pages) {
-  // Adjust URL for non-home pages
-  let url = !ARE_WE_HOME && !p.url.startsWith('http') ? '../' + p.url : p.url;
+    let url = p.url;
+    let title = p.title;
+  
+    url = !ARE_WE_HOME && !url.startsWith('http') ? '../' + url : url;
 
-  // Create the anchor element
-  let a = document.createElement('a');
-  a.href = url;
-  a.textContent = p.title;
+    let a = document.createElement('a');
+    a.href = url;
+    a.textContent = title;
+  
 
-  // Highlight the current page
-  a.classList.toggle(
-    'current',
-    a.host === location.host && a.pathname === location.pathname
-  );
-
-  // Open external links in a new tab
-  if (a.host !== location.host) {
-    a.target = '_blank';
+    a.classList.toggle(
+      'current',
+      a.host === location.host && a.pathname === location.pathname
+    );
+  
+    a.toggleAttribute('target', a.host !== location.host);
+    nav.append(a);
   }
-
-  // Append the link to the navigation menu
-  nav.append(a);
-}
