@@ -15,7 +15,7 @@ html {
 @media (prefers-color-scheme: dark) {
   :root {
     --border-color: oklch(30% 10% 200 / 40%);
-    --background-color: #2c2c2c; /* Dark mode background */
+    --background-color: #b23f3f; /* Dark mode background */
     --text-color: #eaeaea;
     --secondary-text-color: #bbbbbb;
   }
