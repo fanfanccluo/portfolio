@@ -15,7 +15,7 @@ html {
 @media (prefers-color-scheme: dark) {
   :root {
     --border-color: oklch(30% 10% 200 / 40%);
-    --background-color: #b23f3f; /* Dark mode background */
+    --background-color: #ea5656; /* Dark mode background */
     --text-color: #eaeaea;
     --secondary-text-color: #bbbbbb;
   }
@@ -75,3 +75,40 @@ nav a.current {
   border-radius: 4px;
 }
 
+img {
+  max-width: 50%;
+  height: auto;
+  display: block;
+  margin: 0px auto;
+}
+
+img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+
+.pronunciation {
+  color: grey;
+  font-size: 1em;
+  margin: 0px;
+}
+
+h2 {
+  font-size: 200%;
+}
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;
+  text-wrap: balance;
+  margin: 0px;
+}
+h2 {
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  unicode-bidi: isolate;
+}
