@@ -4,12 +4,10 @@ function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 }
 
+let navLinks=$$("nav a")
 let currentLink = navLinks.find(
     (a) => a.host === location.host && a.pathname === location.pathname
   );
-
-currentLink?.classList.add('current');
-
 
 let pages = [
   { url: '', title: 'Home' },
@@ -43,3 +41,37 @@ for (let p of pages) {
     a.toggleAttribute('target', a.host !== location.host);
     nav.append(a);
   }
+
+
+// Add the theme switcher dropdown
+document.body.insertAdjacentHTML(
+    'afterbegin',
+    `
+    <label class="color-scheme">
+      Theme:
+      <select id="theme-select">
+        <option value="light dark">Automatic</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </label>`
+  );
+  
+  // Set theme based on dropdown selection
+  const select = document.getElementById('theme-select');
+  const root = document.documentElement;
+  
+  // Function to set theme
+  function setTheme(theme) {
+    root.style.colorScheme = theme;
+    localStorage.setItem('theme', theme); // Save user preference
+  }
+  
+  // Load saved theme or default to "Automatic"
+  const savedTheme = localStorage.getItem('theme') || 'light dark';
+  setTheme(savedTheme);
+  select.value = savedTheme;
+  
+  // Add event listener for theme changes
+  select.addEventListener('change', () => setTheme(select.value));
+  
