@@ -75,3 +75,29 @@ document.body.insertAdjacentHTML(
   // Add event listener for theme changes
   select.addEventListener('change', () => setTheme(select.value));
   
+
+
+
+
+//Contact Form Handling
+
+const form = document.querySelector('#contact-form');
+
+// Add an event listener for form submission
+form?.addEventListener('submit', function (event) {
+  event.preventDefault();
+  const data = new FormData(form);
+
+  // Build the mailto URL
+  let mailtoUrl = 'mailto:z9luo@ucsd.edu?';
+  let params = [];
+
+  for (let [name, value] of data) {
+    params.push(`${encodeURIComponent(name)}=${encodeURIComponent(value)}`);
+  }
+  // Join parameters and append to the mailto URL
+  mailtoUrl += params.join('&');
+
+  // Open the mailto URL
+  location.href = mailtoUrl;
+});

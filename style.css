@@ -6,7 +6,7 @@ html {
 :root {
   --color-accent: #ff6347; /* Accent color */
   --border-color: oklch(50% 10% 200 / 40%);
-  --background-color: hsla(9, 100%, 64%, 0.5); /* Light mode background */
+  --background-color: hsla(9, 96%, 63%, 0.5); /* Light mode background */
   --text-color: #333;
   --secondary-text-color: grey;
   --hover-background: color-mix(in oklch, var(--color-accent), canvas 85%);
@@ -15,7 +15,7 @@ html {
 @media (prefers-color-scheme: dark) {
   :root {
     --border-color: oklch(30% 10% 200 / 40%);
-    --background-color: #ea5656; /* Dark mode background */
+    --background-color: #ae493a; /* Dark mode background */
     --text-color: #eaeaea;
     --secondary-text-color: #bbbbbb;
   }
@@ -68,11 +68,8 @@ nav a.current {
   right: 1rem;
   font-size: 0.8rem;
   font-family: inherit;
-  background-color: var(--background-color);
   color: var(--text-color);
-  padding: 0.5em;
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
+  
 }
 
 img {
@@ -111,3 +108,126 @@ h2 {
   font-weight: bold;
   unicode-bidi: isolate;
 }
+
+form {
+  display: grid; 
+  grid-template-columns: 1fr 2fr; 
+  gap: 1em; 
+  max-width: 600px; 
+  margin: 0 auto; 
+}
+form label {
+  display: grid; 
+  grid-template-columns: subgrid; 
+  grid-column: 1 / -1; 
+  align-items: center; 
+  gap: 0.5em; 
+}
+form label span {
+  grid-column: 1; 
+}
+form input,
+form textarea {
+  grid-column: 2; 
+  width: 100%; 
+  padding: 0.5em; 
+  box-sizing: border-box; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+}
+form button {
+  grid-column: 1 / -1; 
+  padding: 0.75em;
+  background-color: var(--color-accent); 
+  color: white; 
+  font-weight: bold; 
+  border: none; 
+  border-radius: 4px; 
+  cursor: pointer; 
+}
+form button:hover {
+  background-color: darken(var(--color-accent), 10%);
+}
+
+/* project styling */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); 
+  gap: 1em; 
+  padding: 1em; 
+}
+.projects article {
+  display: grid; 
+  grid-template-rows: subgrid;
+  grid-row: span 3; 
+  gap: 0.5em;
+  background-color: #f9f9f9; 
+  border: 1px solid #ddd;
+  border-radius: 8px; 
+  padding: 1em; 
+}
+.projects img {
+  max-width: 100%; 
+  height: auto; 
+  align-self: start; 
+  margin-bottom: 0.5em; 
+}
+.projects h2 {
+  margin: 0; 
+  font-size: 1.2em; 
+  text-align: center; 
+}
+.projects p {
+  margin: 0;
+  font-size: 1em; 
+  color: #555; 
+  text-align: justify; 
+}
+
+
+/*Contact Form Styling*/
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: rgb(255, 255, 255); 
+  padding: 2rem;
+  border: 1px solid #ddd; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+main section {
+  margin-bottom: 2rem; 
+}
+main section header h2 {
+  font-size: 1.8rem;
+  color: #9e0067; 
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+main p, main ul {
+  font-size: 1rem; 
+  color: #555; 
+  margin-bottom: 1rem; 
+}
+main ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+main ul li {
+  margin-bottom: 0.5rem; 
+}
+main article header h3 {
+  font-size: 1.5rem; 
+  color: #9e0067; 
+  margin-bottom: 0.5rem; 
+}
+footer {
+  text-align: center;
+  margin-top: 2rem; 
+  font-size: 0.9rem; 
+  color: #777; 
+}
+
+
+
