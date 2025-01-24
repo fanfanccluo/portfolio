@@ -1,4 +1,4 @@
-/* Base Styles */
+
 html {
   color-scheme: light dark;
 }
@@ -86,7 +86,6 @@ img {
   overflow-clip-margin: content-box;
   overflow: clip;
 }
-
 
 .pronunciation {
   color: grey;

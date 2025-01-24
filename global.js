@@ -43,26 +43,35 @@ for (let p of pages) {
   }
 
 
-// Reference the <select> element
-const select = document.querySelector('#theme-select');
 
-// Function to set the color scheme
-function setTheme(theme) {
-  // Set the color-scheme property on the root element
-  document.documentElement.style.setProperty('color-scheme', theme);
-
-  // Save the user's preference in localStorage
-  localStorage.setItem('theme', theme);
-}
-
-// Add an event listener for the input event
-select.addEventListener('input', function (event) {
-  const theme = event.target.value;
-  console.log('Color scheme changed to', theme);
-  setTheme(theme);
-});
-
-// Load saved theme or default to "Automatic"
-const savedTheme = localStorage.getItem('theme') || 'light dark';
-setTheme(savedTheme); // Apply the saved theme
-select.value = savedTheme; // Set the dropdown value
+document.body.insertAdjacentHTML(
+    'afterbegin',
+    `
+    <label class="color-scheme">
+      Theme:
+      <select id="theme-select">
+        <option value="light dark">Automatic</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </label>`
+  );
+  
+  // Set theme based on dropdown selection
+  const select = document.getElementById('theme-select');
+  const root = document.documentElement;
+  
+  // Function to set theme
+  function setTheme(theme) {
+    root.style.colorScheme = theme;
+    localStorage.setItem('theme', theme); // Save user preference
+  }
+  
+  // Load saved theme or default to "Automatic"
+  const savedTheme = localStorage.getItem('theme') || 'light dark';
+  setTheme(savedTheme);
+  select.value = savedTheme;
+  
+  // Add event listener for theme changes
+  select.addEventListener('change', () => setTheme(select.value));
+  
