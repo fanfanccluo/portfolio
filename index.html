@@ -3,20 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zifan Luo:'Personal site and Portfolio</title>
+    <title>Zifan Luo: Personal Site and Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="global.js" type="module"></script>
+    <base href="/portfolio/">
 </head>
 <body>
 
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="/portfolio/">Home</a></li>
+            <li><a href="/portfolio/projects/">Projects</a></li>
+            <li><a href="/portfolio/contact/">Contact</a></li>
+            <li><a href="/portfolio/cv/">CV</a></li>
+        </ul>
+    </nav>
 
+    <!-- Main Content -->
     <h1>Zifan Luo 🥥🪷</h1>
     <h2 class="pronunciation">(pronounced: Zee-fan Loo-oh)</h2>
     
-    <p>My name is Zifan. I'm currently a thrid-year CogSci spec. in Machine Learning and Data Science student.
-       I like papayas and volcanos. Over the winter break, I went on a backpacking trip in Guatemala! Below is a picture 
+    <p>My name is Zifan. I'm currently a third-year CogSci specializing in Machine Learning and Data Science.  
+       I like papayas and volcanoes. Over the winter break, I went on a backpacking trip in Guatemala! Below is a picture  
        of an active stratovolcano named 'Fuego'! 🌋
     </p>
-    <img src="images/Volcano.jpg" alt="A photo of the erupting Fuego Volcano" />
+
+    <!-- Update image path to work with GitHub Pages -->
+    <img src="/portfolio/images/Volcano.jpg" alt="A photo of the erupting Fuego Volcano" />
+
 </body>
 </html>
