@@ -1,21 +1,21 @@
 import { fetchGitHubData } from './global.js';
 
 async function loadGitHubStats() {
-    const githubUsername = 'fanfanccluo'; 
-    const githubData = await fetchGitHubData(fanfanccluo);
+    const githubData = await fetchGitHubData('fanfanccluo'); 
     const profileStats = document.querySelector('#profile-stats');
 
-    if (githubData && profileStats) {
+    if (profileStats && githubData) {
         profileStats.innerHTML = `
-            <h2>My GitHub Stats</h2>
             <dl>
-                <dt>Username:</dt><dd>${githubData.public_gists}</dd>
-                <dt>Public Repos:</dt><dd>${githubData.public_repos}</dd>
                 <dt>Followers:</dt><dd>${githubData.followers}</dd>
                 <dt>Following:</dt><dd>${githubData.following}</dd>
+                <dt>Public Repos:</dt><dd>${githubData.public_repos}</dd>
+                <dt>Public Gists:</dt><dd>${githubData.public_gists}</dd>
             </dl>
         `;
+    } else {
+        console.error('GitHub data not found or element missing.');
     }
 }
 
-document.addEventListener('DOMContentLoaded', loadGitHubStats);
+loadGitHubStats(); 
