@@ -150,6 +150,7 @@ form button:hover {
 }
 
 /* project styling */
+/*
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); 
@@ -182,6 +183,64 @@ form button:hover {
   font-size: 1em; 
   color: #555; 
   text-align: justify; 
+}
+*/
+
+.projects {
+  display: flex; /* Align projects side by side */
+  flex-wrap: wrap; /* Wrap if screen is too small */
+  justify-content: center; /* Center align */
+  gap: 20px; /* Space between cards */
+  padding: 40px 0; /* Add space around projects */
+}
+
+/* Individual Project Card */
+.projects article {
+  background: white;
+  border-radius: 15px; /* Soft rounded corners */
+  padding: 20px;
+  width: 300px; /* Control width */
+  text-align: center; /* Center content */
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+  transition: transform 0.3s ease-in-out;
+}
+
+.projects article:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Project Title */
+.projects article h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Project Year */
+.projects article p.year {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+/* Project Image Placeholder */
+.projects article img {
+  width: 100%; /* Make image responsive */
+  height: 180px; /* Fix height */
+  object-fit: cover; /* Ensure full coverage */
+  border-radius: 10px; /* Smooth edges */
+  background: #ddd; /* Default gray if no image */
+  display: block;
+  margin: 10px auto;
+}
+
+/* Project Description */
+.projects article p {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
 }
 
 
