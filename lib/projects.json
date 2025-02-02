@@ -3,14 +3,14 @@
 	{
 		"title": "Best Biomarkers For Recent Substance Use ",
 		"year": "2024",
-		"image": "",
-		"description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor quos, quod assumenda explicabo odio, nobis ipsa laudantium quas eum veritatis ullam sint porro minima modi molestias doloribus cumque odit."
+		"image": "https://vis-society.github.io/labs/2/images/empty.svg",
+		"description": "Utilizing Random Forests to identify the best biomarkers for recent substance use."
 	  },
 	{
 		"title": "Statistical Analysis of the Weather Data",
 		"year": "2024",
 		"image": "https://vis-society.github.io/labs/2/images/empty.svg",
-		"description": "Est, reiciendis aspernatur debitis maxime et itaque animi sit quod quo, tempore incidunt tempora dignissimos exercitationem enim numquam quam quaerat optio laborum ut unde hic delectus laboriosam? Quasi, cupiditate corporis."
+		"description": "Class Project for DSC190"
 	},
 	{
 		"title": "Prototype of a Sustaniability App",
