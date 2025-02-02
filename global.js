@@ -133,7 +133,7 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
 // Fetch GitHub data
 export async function fetchGitHubData(username) {
   try {
-      const response = await fetch(`https://api.github.com/users/${fanfanccluo}`);
+      const response = await fetch(`https://api.github.com/users/fanfanccluo`);
       if (!response.ok) {
           throw new Error(`GitHub API Error: ${response.statusText}`);
       }

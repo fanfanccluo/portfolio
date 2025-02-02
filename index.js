@@ -7,7 +7,7 @@ async function loadGitHubStats() {
 
     if (githubData && profileStats) {
         profileStats.innerHTML = `
-            <h2>GitHub Stats</h2>
+            <h2>My GitHub Stats</h2>
             <dl>
                 <dt>Public Repos:</dt><dd>${githubData.public_repos}</dd>
                 <dt>Followers:</dt><dd>${githubData.followers}</dd>
