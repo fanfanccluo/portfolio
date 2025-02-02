@@ -67,31 +67,26 @@ document.body.insertAdjacentHTML(
   
 
 
-
-
-//Contact Form Handling
-
 const form = document.querySelector('#contact-form');
 
-// Add an event listener for form submission
 form?.addEventListener('submit', function (event) {
   event.preventDefault();
   const data = new FormData(form);
-
-  // Build the mailto URL
   let mailtoUrl = 'mailto:z9luo@ucsd.edu?';
   let params = [];
 
   for (let [name, value] of data) {
     params.push(`${encodeURIComponent(name)}=${encodeURIComponent(value)}`);
   }
-  // Join parameters and append to the mailto URL
   mailtoUrl += params.join('&');
-
-  // Open the mailto URL
   location.href = mailtoUrl;
 });
 
+
+
+
+
+// Fetch JSON data
 export async function fetchJSON(url) {
   try {
       // Fetch the JSON file from the given URL
@@ -111,6 +106,7 @@ export async function fetchJSON(url) {
   }
 }
 
+// Render projects
 export function renderProjects(projects, containerElement, headingLevel = 'h2') {
   containerElement.innerHTML = '';
 
@@ -132,4 +128,19 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
       article.appendChild(description);
       containerElement.appendChild(article);
   });
+}
+
+// Fetch GitHub data
+export async function fetchGitHubData(username) {
+  try {
+      const response = await fetch(`https://api.github.com/users/${fanfanccluo}`);
+      if (!response.ok) {
+          throw new Error(`GitHub API Error: ${response.statusText}`);
+      }
+      return await response.json();
+
+  } catch (error) {
+      console.error('Failed to fetch GitHub data:', error);
+      return null;
+  }
 }
