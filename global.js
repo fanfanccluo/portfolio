@@ -83,9 +83,6 @@ form?.addEventListener('submit', function (event) {
 });
 
 
-
-
-
 // Fetch JSON data
 export async function fetchJSON(url) {
   try {
