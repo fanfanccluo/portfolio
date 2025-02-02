@@ -138,7 +138,6 @@ export async function fetchGitHubData(username) {
           throw new Error(`GitHub API Error: ${response.statusText}`);
       }
       return await response.json();
-
   } catch (error) {
       console.error('Failed to fetch GitHub data:', error);
       return null;
