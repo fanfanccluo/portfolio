@@ -229,3 +229,46 @@ footer {
   color: #777; 
 }
 
+
+/* Style for the GitHub Stats Section */
+#profile-stats {
+  background-color: #f8d7da; /* Light pink background */
+  padding: 20px; /* Add spacing inside */
+  border-radius: 10px; /* Rounded corners */
+  text-align: center; /* Center text */
+  max-width: 600px; /* Limit width */
+  margin: 20px auto; /* Center on the page */
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Style the heading */
+h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  color: #333; /* Darker text */
+  padding: 10px;
+}
+
+/* Styling the GitHub Stats data */
+#profile-stats dl {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: 15px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+#profile-stats dt {
+  font-weight: bold;
+  color: #555;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+#profile-stats dd {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  color: black;
+}
