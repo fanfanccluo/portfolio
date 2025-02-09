@@ -391,6 +391,7 @@ svg:has(path:hover) path:not(:hover) {
 
 path {
     transition: 300ms;
+    cursor: pointer;
   }
 
 
@@ -401,3 +402,16 @@ path {
       fill: var(--color);
     }
   }
+
+
+/* Styling for SearchBar */
+.searchBar {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.75em 1em;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
