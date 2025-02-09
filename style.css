@@ -219,10 +219,12 @@ form button:hover {
 
 /* Project Year */
 .projects article p.year {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #666;
-  margin-bottom: 15px;
+  font-size: 1.1rem;
+  font-weight: normal; 
+  color: #555;
+  font-style: italic;
+  font-variant-numeric: oldstyle-nums;
+  margin-bottom: 12px;
 }
 
 /* Project Image Placeholder */
@@ -331,3 +333,71 @@ h2 {
   margin: 0;
   color: black;
 }
+
+#projects-pie-plot {
+  max-width: 20em;
+  margin-block: 2em;
+  overflow: visible;
+}
+
+/* Legend Styling */
+.container {
+  display: flex;             
+  flex-wrap: wrap;           
+  align-items: flex-start;   
+  gap: 2em;                 
+  margin: 2em 0;
+}
+
+svg {
+  flex: 1 1 300px;          
+  max-width: 100%;           
+  height: auto;
+}
+
+.legend {
+  flex: 2 1 400px;          
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr)); 
+  gap: 1em;
+  border: 1px solid #ddd;
+  padding: 1em;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.swatch {
+  width: 1em;
+  height: 1em;
+  aspect-ratio: 1 / 1;
+  background-color: var(--color);
+  border-radius: 50%;
+  display: inline-block;
+  border: 1px solid #333;
+}
+
+
+/* Pie Chart Hover Effect */
+svg:has(path:hover) path:not(:hover) {
+  opacity: 0.5; /* Fade out non-hovered wedges */
+  transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+path {
+    transition: 300ms;
+  }
+
+
+.selected {
+    --color: oklch(60% 45% 0) !important;
+  
+    &:is(path) {
+      fill: var(--color);
+    }
+  }

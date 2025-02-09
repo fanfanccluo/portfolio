@@ -9,20 +9,31 @@ let currentLink = navLinks.find(
     (a) => a.host === location.host && a.pathname === location.pathname
   );
 
+// let pages = [
+//     { url: '/portfolio/', title: 'Home' },
+//     { url: '/portfolio/projects/', title: 'Projects' },
+//     { url: '/portfolio/contact/', title: 'Contact' },
+//     { url: '/portfolio/cv/', title: 'CV' },
+//     { url: 'https://github.com/fanfanccluo/', title: 'GitHub' },
+//   ];
+
 let pages = [
-    { url: '/portfolio/', title: 'Home' },
-    { url: '/portfolio/projects/', title: 'Projects' },
-    { url: '/portfolio/contact/', title: 'Contact' },
-    { url: '/portfolio/cv/', title: 'CV' },
+    { url: 'index.html', title: 'Home' },
+    { url: 'projects/index.html', title: 'Projects' },
+    { url: 'contact/index.html', title: 'Contact' },
+    { url: 'cv/index.html', title: 'CV' },
     { url: 'https://github.com/fanfanccluo/', title: 'GitHub' },
   ];
-  
+
+const ARE_WE_HOME = document.documentElement.classList.contains('home');
+
 let nav = document.createElement('nav');
   document.body.prepend(nav);
   
   for (let p of pages) {
       let a = document.createElement('a');
-      a.href = p.url;
+      let url = !ARE_WE_HOME && !p.url.startsWith('http') ? '../' + p.url : p.url;
+      a.href = url;
       a.textContent = p.title;
   
       a.classList.toggle(
@@ -108,18 +119,22 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
   containerElement.innerHTML = '';
 
   projects.forEach(project => {
-      const article = document.createElement('article'); 
+    const article = document.createElement('article');
+    article.classList.add('project-card');  // Add class for styling
 
-      article.innerHTML = `
-          <${headingLevel}>${project.title}</${headingLevel}>
-          <p>Year: ${project.year}</p>
-          <img src="${project.image || 'default.jpg'}" alt="${project.title}">
-          <p>${project.description}</p>
-      `;
+    article.innerHTML = `
+      <${headingLevel} class="project-title">${project.title}</${headingLevel}>
+      <div class="project-details">
+        <p class="project-description">${project.description}</p>
+        <p class="project-year"><strong>Year:</strong> ${project.year}</p>
+      </div>
+      <img src="${project.image || 'default.jpg'}" alt="${project.title}" class="project-image">
+    `;
 
-      containerElement.appendChild(article);
+    containerElement.appendChild(article);
   });
 }
+
 
 
 // Fetch GitHub data
