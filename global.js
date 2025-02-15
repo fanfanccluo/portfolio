@@ -1,5 +1,3 @@
-console.log('IT’S ALIVE!');
-
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 }
@@ -9,24 +7,16 @@ let currentLink = navLinks.find(
     (a) => a.host === location.host && a.pathname === location.pathname
   );
 
-// let pages = [
-//     { url: '/portfolio/', title: 'Home' },
-//     { url: '/portfolio/projects/', title: 'Projects' },
-//     { url: '/portfolio/contact/', title: 'Contact' },
-//     { url: '/portfolio/cv/', title: 'CV' },
-//     { url: 'https://github.com/fanfanccluo/', title: 'GitHub' },
-//   ];
-
 let pages = [
     { url: 'index.html', title: 'Home' },
     { url: 'projects/index.html', title: 'Projects' },
     { url: 'contact/index.html', title: 'Contact' },
     { url: 'cv/index.html', title: 'CV' },
+    { url: 'meta/index.html', title: 'Meta' },
     { url: 'https://github.com/fanfanccluo/', title: 'GitHub' },
   ];
 
 const ARE_WE_HOME = document.documentElement.classList.contains('home');
-
 let nav = document.createElement('nav');
   document.body.prepend(nav);
   

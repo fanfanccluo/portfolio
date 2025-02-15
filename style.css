@@ -107,6 +107,8 @@ h2 {
   margin-inline-end: 0px;
   font-weight: bold;
   unicode-bidi: isolate;
+  text-align: left;
+
 }
 
 form {
@@ -414,4 +416,120 @@ path {
   border-radius: 8px;
   outline: none;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* gridlines style */
+.gridlines .tick line {
+  stroke: gray;    
+  stroke-width: 0.5px;  
+  stroke-dasharray: 4, 2; 
+}
+
+
+
+
+
+dl.info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  margin: 0;
+  padding: 0.5em;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+dl.info dt {
+  font-weight: bold;
+  color: #666;
+}
+
+dl.info dd {
+  margin: 0;
+  padding: 0 0 0.5em 0.5em;
+  color: #333;
+}
+
+.tooltip {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 1em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  max-width: 300px;
+  font-size: 0.9em;
+  display: none; 
+}
+
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
+
+
+.stats {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5em 1em; /* Spacing between rows and columns */
+  background-color: #fff;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 1em auto;
+}
+
+.stats dt {
+  font-weight: bold;
+  color: #555;
+}
+
+.stats dd {
+  margin: 0;
+  padding: 0;
+  color: #222;
+  font-weight: normal;
+}
+
+.stats abbr {
+  text-decoration: none;
+  border-bottom: 1px dotted #999;
+}
+
+.stats dt::after {
+  content: ':';
+  margin-left: 0.2em;
+  color: #888;
+}
+
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8;
+  }
+}
+
+.selection {
+  fill-opacity: 0.1;
+  stroke: black;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
+
+circle.selected {
+  fill: #ff6b6b;
 }
